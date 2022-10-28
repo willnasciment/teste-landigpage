@@ -88,15 +88,15 @@ body {
 
 .container {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     color: var(--color-primary);
     align-items: center;
 }
-    
-.formulario {
+
+.container .formulario {
     display: flex;
-   font-size: 12px;
+    font-size: 12px;
 }    
   
 .formulario .text {
@@ -172,74 +172,194 @@ body {
 * PRODUCTS
 ***********/
 
-.container .products {
+.products {
     display: flex;
     flex-direction: column;
     font-size: 12px;
-    justify-content: center;
-    
-}
-
-.container .products .title-products {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 35px;
-    width: 100%;
-    
-}
-
-.container .products .title-products h2 {
-    display: flex;
     align-items: center;
+    
+}
+
+.products .title-products {
+    text-align: center;
+    width: 100%;
+    padding: 35px 0;
+    
+}
+
+.products .title-products h2 {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    padding: 8px 0;
 
 }
 
 /* aplicando linha entre o H2 */
-.container .products .title-products h2::before,
-.container .products .title-products h2::after{
+.products .title-products h2::before,
+.products .title-products h2::after{
     display: block;
     content: "";
-    width: 33%;
+    width: 38%;
     height: 2px;
     background-color: var(--color-primary);
     margin: 0px 8px;
 }
 
-.container .products .catalog {
+.products .catalog {
     display: flex;
     max-width: 900px;
     justify-content: space-between;
     flex-wrap: wrap;
     
 }
-.container .products .catalog div {
+.products .catalog div {
     display: flex;
     flex-direction: column;
 }
 
-.container .products .catalog img {
+.products .catalog img {
     width: 200px;
     height: 150px;
     border: 1px solid var(--color-primary);
-}
+    margin-bottom: 15px;
+}    
 
-.container .products .catalog .images {
-    width: 200px;
-    height: 150px;
-    border: 1px solid var(--color-primary);
-}
 
-.container .products .catalog .description {
+
+.products .catalog .description {
     display: flex;
     flex-direction: column;
 }
     
+.products .catalog .description span,
+.products .catalog .description p {
+    margin-bottom: 10px;
+}    
+
+ .products .catalog button
+{
+    background-color: #fff;
+    color: var(--color-primary);
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--color-primary);
+    
+}
+
+ .products .button-last-page {
+    width: 260px;
+    background-color: #fff;
+    color: var(--color-primary);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-primary);
+    margin: 30px 0 70px 0;
+}
+
+/**************
+* COMPARTILHE
+**************/
+
+ .compartilhe {
+    display: flex;
+    width: 900px;
+    flex-direction: column;
+    align-items: center;
+    height: 370px;
+    
+}
+
+.compartilhe .title {
+    text-align: center;
+    width: 100%;
+    
+}
+
+.compartilhe .title h2 {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    padding: 48px 0;
+}
+
+.compartilhe .title h2::before,
+.compartilhe .title h2::after {
+    display: block;
+    content: "";
+    width: 38%;
+    height: 2px;
+    background-color: var(--color-primary);
+    margin: 0px 3px;
+}
+
+.compartilhe .title h3 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.compartilhe  .form2 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: center;
+    
+    
+}
+
+.compartilhe .form2 div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+    
+.compartilhe .form2 div label {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    width: 40%;
+    margin-right: 30px;
+} 
+
+.compartilhe .form2 div label input {
+    outline: none;
+    margin-top: 8px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--color-primary);
+
+}
+
+.compartilhe .form2 button {
+    width: 260px;
+    background-color: #fff;
+    color: var(--color-primary);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-primary);
+    margin-top: 40px;
+
+    
+}
+
+    
+    
+    
+    
     
 
-
-
-
-
+    
+    
 
 
    
