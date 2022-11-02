@@ -155,7 +155,21 @@ body {
 .formulario .form .input-sexo div:last-child {
     margin-left: 35px;
 }
-    
+
+/* Erro caso os input não forem preenchidos */
+.inputError {
+    border: 1px solid red;
+   
+}
+
+/* span erro */
+.erro {
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+
 
 .formulario .form button {
     color: var(--color-primary);
@@ -167,6 +181,17 @@ body {
     margin-top: 5px;
     border-radius: 4px;
 }
+
+/* ao clicar enviar */
+.sendSucess {
+    display: flex;
+    color: green;
+    justify-content: center;
+    margin-top: 8px;
+    
+}
+
+
 
 /**********
 * PRODUCTS
@@ -326,7 +351,7 @@ body {
     flex-direction: column;
     font-size: 12px;
     width: 40%;
-    margin-right: 30px;
+    margin:0 20px;
 } 
 
 .compartilhe .form2 div label input {
@@ -352,7 +377,32 @@ body {
     
 }
 
-    
+/*********
+* FOOTER
+**********/
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    background-color: var(--color-primary);
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 29%, 100% 0, 100% 100%, 0 100%);
+}
+
+footer div {
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+footer div span {
+    margin-bottom: 5px;
+}
     
     
     
