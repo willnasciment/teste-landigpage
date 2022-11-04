@@ -1,9 +1,16 @@
 
 let formulario = document.querySelector('#form')
 let formulario2 = document.querySelector('#form2')
+const productIitem = document.querySelector('.catalog')
+const containerLoadMore = document.querySelector('.container-loadMore')
+const btnLoadMore = document.querySelector('.btn-loadMore')
 
 
-// Validando Formulário
+
+
+
+
+// VALIDANDO FORMULÁRIO
 formulario.onsubmit = function(evento) {
     evento.preventDefault() // prevenido comportamento padrão do formulario 
 
@@ -70,7 +77,7 @@ formulario.onsubmit = function(evento) {
     
 }
 
-// validando formulário 2 
+// FORMULÁRIO 2 
 formulario2.onsubmit = function(evento) {
     evento.preventDefault()
 
@@ -115,9 +122,65 @@ formulario2.onsubmit = function(evento) {
     }
 }
     
-    
-   
+ // CONSUMINDO API
+ 
+ let urlApi = `https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1`
 
+fetch(urlApi)
+    .then(turnIntoJson)
+    .then(loadItems)
+    .catch(error => console.log('erro: ' + error))
 
+let contClicks = 0;
 
+function loadItems(data) {
 
+    const lengthObj = data.products.length
+    const products = data.products
+
+    for (let i = 0; i < lengthObj; i++) {
+        productIitem.innerHTML += `
+                <div class="product-item">
+                    <div class="image-item">
+                        <img src="${products[i].image}" alt="Produto">
+                    </div>
+                    <div>
+                        <h4 class="name-item">
+                            ${products[i].name}
+                        </h4>
+                        <p class="desc-item">
+                            ${products[i].description}
+                        </p>
+                        <span class="oldPrice-item">De: R$ ${products[i].oldPrice}</span>
+                        <h4 class="price-item">Por: R$ ${products[i].price}</h4>
+                        <span class="option-price-item">Ou: ${products[i].installments.count}x de R$
+                            ${products[i].installments.value}</span>
+                        <a href="#" class="buttom-item">Comprar</a>
+                    </div>
+                </div>
+        `
+    }
+
+    contClicks++;
+    if (contClicks >= 4) {
+        containerLoadMore.classList.add('remove');
+    }
+
+    btnLoadMore.onclick = function () {
+       
+
+        fetch(`https://${data.nextPage}`)
+            .then(turnIntoJson)
+            .then(loadItems)
+            .catch(error => console.log(error))
+
+        setTimeout(() => {
+            btnLoadMore.classList.remove('remove');
+
+        }, 500)
+    }
+}
+
+function turnIntoJson(response) {
+    return response.json()
+}
