@@ -13,10 +13,12 @@ body {
     
 }
 
-/**************
-* PRESENTATION
-***************/
-
+/***********************
+* HEADER E PRESENTATION
+************************/
+.presentation {
+    display: flex;
+}
 
 .presentation header {
     display: flex;
@@ -76,9 +78,62 @@ body {
     color: var(--color-primary);
     background-color: #fff;
     font-size: 14px;
-    padding: 8px 30px;
+    padding: 8px 25px;
     border-radius: 4px;
+    width: 160px;
+    text-align: center;
     
+}
+
+@media(max-width: 900px) {
+
+    .presentation header {
+        display: flex;
+        align-items: flex-start;
+        /*align-items: flex-start; */
+    }
+
+    .presentation header h1 {
+       margin-left: 10px;
+        margin-bottom: 0;
+        margin-top: 40px;
+    }
+
+    .presentation header h2 {
+        margin-bottom: 0;
+        font-size: 35px;
+        margin-left: 10px; 
+    }
+
+    .presentation header p {
+        margin: 10px 10px 30px;
+    }
+
+    .nav-bar {
+        margin-top: 0;
+    }
+
+
+    .nav-bar ul {
+        flex-wrap: wrap;
+        /*margin: auto 20px; */
+        display: flex;
+        justify-content: center;
+    }
+    
+
+    .nav-bar ul li {
+        margin: 0px 10px;
+    }
+    
+    .nav-bar ul li a {
+        margin-bottom: 15px;
+        width: 140px;
+        text-align: center;
+        padding: 10px 0;
+
+    }
+        
 }
 
 
@@ -191,6 +246,27 @@ body {
     justify-content: center;
     margin-top: 8px;
     
+}
+
+@media(max-width: 900px) {
+    .container {
+        max-width: 420px;
+        margin: 0;
+    }
+
+    .container .formulario {
+        flex-direction: column;
+        max-width: 420px;
+    }
+    .formulario .text {
+        width: 100%;
+        padding: 20px;
+    }
+    .formulario .form {
+        width: 100%;
+        padding: 20px;
+        margin-top: -30px;
+    }
 }
 
 
@@ -318,6 +394,48 @@ body {
 
   }
 
+  @media(max-width: 1200px) {
+    .products {
+        width: 100%;
+    }
+
+    .products .title-products {
+        text-align: center;
+    }
+
+    .products .title-products h2::before,
+    .products .title-products h2::after{
+    width: 24%;
+    margin: 0 auto;
+    }
+
+    .products .catalog {
+        display: block;
+        width: 100%;
+    }
+
+    .products .catalog .product-item {
+        display: flex;
+        width: 90%;
+        max-width: 420px;
+        margin: 0px 10px;
+    }
+
+    .products .catalog .product-item .image-item {
+        border: 1px solid var(--color-primary);
+        margin-right: 20px;
+        width: 150px;
+    }
+
+    .products .catalog .product-item p {
+        display: none;
+    }
+
+    .products .catalog .product-item a.buttom-item {
+        width: 190px;
+    }
+  }
+
 /**************
 * COMPARTILHE
 **************/
@@ -357,6 +475,7 @@ body {
 .compartilhe .title h3 {
     font-size: 14px;
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
 .compartilhe  .form2 {
@@ -372,7 +491,7 @@ body {
 
 .compartilhe .form2 div {
     display: flex;
-    flex-direction: row;
+    
     justify-content: center;
     width: 100%;
 }
@@ -408,6 +527,41 @@ body {
     
 }
 
+@media(max-width: 900px) {
+    .compartilhe {
+        max-width: 380px;
+    }
+
+    .compartilhe .title h2 {
+        font-size: 18px;
+    }
+
+    .compartilhe .title h2::before,
+    .compartilhe .title h2::after {
+        width: 24%;
+        margin: 0 auto;
+        
+    }
+
+    .compartilhe  .form2 {
+        padding: 14px;
+    }
+
+    .compartilhe .form2 div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .compartilhe .form2 div label {
+        width: 90%;
+        margin-bottom: 16px;
+    }
+
+    .compartilhe .form2 button {
+        margin-top: 15px;
+    }
+}
+
 /*********
 * FOOTER
 **********/
@@ -434,8 +588,14 @@ footer div {
 footer div span {
     margin-bottom: 5px;
 }
-    
-    
+
+
+@media(max-width: 900px) {
+    footer {
+        height: 150px;
+        margin-top: 20px;
+    }
+}    
     
     
 
