@@ -10,14 +10,20 @@ A ideia era seguir o mockup(design) disponibilizado, fazer validação de formul
 
 o maior desafio pessoal no projeto foi realizar a consulta da API de forma paginada, de forma que, ao clicar no botão, uma nova requisição é feita e os próximos produtos são adicionados.
 
-Algumas funcionalidades adicionais foram implementadas a fim de melhorar a experiência do usuário, como Efeito de loading ao clicar para carregar mais produtos, validação de email e cpf nos campos de formulário e também um Scroll suave ao clicar nos botões so topo para direcionar às seções, feito com Js puro.
+Algumas funcionalidades adicionais foram implementadas a fim de melhorar a experiência do usuário, validação de email e cpf nos campos de formulário.
 
 ## :bulb: Tecnologias usadas:
 
 - `HTML`
 - `CSS`
-- `Javascript Puro (vanilla)`
+- `Javascript Puro`
 
+##  Rodar o projeto localmente:
+
+- clone esse repositório git clone https://github.com/willnasciment/teste-landigpage
+- Clique na aba `clone`
+- Faça o `Download ZIP`
+- Após feito o download, acesse a pasta e abra o arquivo index.html
 
 ## :link: Link do Projeto feito:
 

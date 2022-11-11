@@ -1,40 +1,35 @@
 
 let formulario = document.querySelector('#form')
 let formulario2 = document.querySelector('#form2')
-const productIitem = document.querySelector('.catalog')
+const productItem = document.querySelector('.catalog')
 const containerLoadMore = document.querySelector('.container-loadMore')
 const btnLoadMore = document.querySelector('.btn-loadMore')
 
-
-
-
-
-
-// VALIDANDO FORMULÁRIO
+//validating form
 formulario.onsubmit = function(evento) {
-    evento.preventDefault() // prevenido comportamento padrão do formulario 
+    evento.preventDefault() 
 
-    let temErro = false
+    let isError = false
     
-    let inputNome = document.forms['form']['nome']
-    if (!inputNome.value) {
-        temErro = true
-        inputNome.classList.add('inputError') // caso não for preenchido adicione a classe 'inputError' estilizada no css 
+    let inputName = document.forms['form']['nome']
+    if (!inputName.value) {
+        isError = true
+        inputName.classList.add('inputError') 
 
-        //console.log(inputNome.nextSibling) aqui vejo qual é o netSibling( próximo irmão do campo input) que no caso vai ser o  span que vou adicinar a msg de erro
-        let span = inputNome.nextSibling.nextSibling //sabendo disso declaro uma variável e insiro o texto personalizado 
+        
+        let span = inputName.nextSibling.nextSibling 
         span.innerText = 'Digite o nome!'
-    } else { // caso contrário 
-        inputNome.classList.remove('inputError') //caso for preenchido removo a classe 'inputError' 
-
-        let span = inputNome.nextSibling.nextSibling // e apago a mensagem do span 
+    } else { 
+        inputName.classList.remove('inputError')
+        
+        let span = inputName.nextSibling.nextSibling 
         span.innerText = ''
 
     } 
 
     let inputEmail = document.forms['form']['email']
     if (!inputEmail.value) {
-        temErro = true
+        isError = true
         inputEmail.classList.add('inputError') 
 
         
@@ -49,8 +44,9 @@ formulario.onsubmit = function(evento) {
     } 
 
     let inputCpf= document.forms['form']['cpf']
+
     if (!inputCpf.value) {
-        temErro = true
+        isError = true
         inputCpf.classList.add('inputError') 
 
         
@@ -64,11 +60,11 @@ formulario.onsubmit = function(evento) {
 
     } 
 
-    // botão enviar 
+   
     const botaoEnviar = document.querySelector('#form>button')
-    if(!temErro) {
-        sendIsPressed = 'sended'
-        if(sendIsPressed === 'sended') {
+    if(!isError) {
+        sendOnPressed = 'sended'
+        if(sendOnPressed === 'sended') {
             botaoEnviar.classList.add('sendSucess')
             let span = botaoEnviar.nextSibling.nextSibling
             span.innerText = 'Enviado com sucesso!'
@@ -77,15 +73,15 @@ formulario.onsubmit = function(evento) {
     
 }
 
-// FORMULÁRIO 2 
+
 formulario2.onsubmit = function(evento) {
     evento.preventDefault()
 
-    let temErro = false
+    let isError = false
 
     let nameFriend = document.forms['form2']['nome']
     if(!nameFriend.value) {
-        temErro = true
+        isError = true
         nameFriend.classList.add('inputError')
 
     let span = nameFriend.nextSibling.nextSibling
@@ -99,7 +95,7 @@ formulario2.onsubmit = function(evento) {
 
     let friendEmail = document.forms['form2']['email']
     if(!friendEmail.value) {
-        temErro = true
+        isError = true
         friendEmail.classList.add('inputError')
 
     let span = friendEmail.nextSibling.nextSibling
@@ -111,18 +107,18 @@ formulario2.onsubmit = function(evento) {
         span.innerText= ''
     }
 
-    const botaoEnviar = document.querySelector('#form2>button')
-    if(!temErro) {
-        sendIsPressed = 'sended'
-        if(sendIsPressed === 'sended') {
-            botaoEnviar.classList.add('sendSucess')
-            let span = botaoEnviar.nextSibling.nextSibling
+    const buttonSubmit  = document.querySelector('#form2>button')
+    if(!isError) {
+        sendOnPressed = 'sended'
+        if(sendOnPressed === 'sended') {
+            buttonSubmit .classList.add('sendSucess')
+            let span = buttonSubmit .nextSibling.nextSibling
             span.innerText = 'Enviado com sucesso!'
         } 
     }
 }
     
- // CONSUMINDO API
+ // API
  
  let urlApi = `https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1`
 
@@ -139,7 +135,7 @@ function loadItems(data) {
     const products = data.products
 
     for (let i = 0; i < lengthObj; i++) {
-        productIitem.innerHTML += `
+        productItem.innerHTML += `
                 <div class="product-item">
                     <div class="image-item">
                         <img src="${products[i].image}" alt="Produto">

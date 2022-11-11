@@ -57,11 +57,13 @@ body {
     display: flex;
     margin-top: 40px;
     justify-content: center;
+    width: 100%;
 }
 
 .nav-bar ul {
     display: flex;
     list-style: none;
+    justify-content: center;
     
 }
 
@@ -186,10 +188,14 @@ body {
     padding: 5px 0;
     outline: none;
 }
-    
-    
 
-/* input-sexo */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+
+}
+
 .formulario .form .input-sexo {
     display: flex;
     width: 20%;
@@ -213,13 +219,13 @@ body {
     margin-left: 35px;
 }
 
-/* Erro caso os input não forem preenchidos */
+
 .inputError {
     border: 1px solid red;
    
 }
 
-/* span erro */
+
 .erro {
     display: flex;
     justify-content: center;
@@ -239,7 +245,7 @@ body {
     border-radius: 4px;
 }
 
-/* ao clicar enviar */
+
 .sendSucess {
     display: flex;
     color: green;
@@ -299,7 +305,7 @@ body {
 
 }
 
-/* aplicando linha entre o H2 */
+
 .products .title-products h2::before,
 .products .title-products h2::after{
     display: block;
